@@ -1,0 +1,1386 @@
+/*
+Theme Name: Vision by Pixels
+Theme URI: http://design.ephaemera.com
+Author: Dede Stolee
+Author URI: http://ephaemera.com
+Description: Vision by Pixels custom photography portfolio theme--original version with front page grid.
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: Photography, portfolio
+Text Domain: vision-by-pixels
+*/
+
+/* -------------------------------------------------------------------------------- */
+/*	1. Document setup
+/* -------------------------------------------------------------------------------- */
+
+body {
+    background-color:#111111; /* area above footer */
+    color:#c9c9c9;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: .875rem;
+    font-size: 14px;
+}
+
+ .off-canvas-content {
+    background: #111111; /* hero background */
+}
+
+.off-canvas-content .page {
+    background: #eee;
+    color: #444;
+}
+
+.wrap {
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+    width: 90%;
+}
+
+.thumbnail {
+    border: 0;
+    box-shadow: none;
+}
+
+.thumbnail:hover {
+    box-shadow: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 2.33rem; /* 33.19px */
+}
+
+h2 {
+    font-size: 2rem; /* 24.89px */
+}
+
+h3 {
+    font-size: 1.67rem; /* 1.33rem  18.67px */
+}
+
+h4 {
+    font-size: 1.33rem; /* 1rem  14px */
+}
+
+h5 {
+    font-size: 1rem; /* .75rem 10.5px */
+}
+
+h6 {
+    font-size: .67rem;  /* .56rem  7.88px */
+}
+
+ul, ol {
+    list-style: none;
+    list-style-type: none;
+}
+
+li {
+    font-size: inherit;
+    list-style: none;
+}
+
+.column, .columns {
+    padding-left: 0;
+    padding-right: 0; /* for change from "hero" to "grid"; originally 0.625rem each */
+    min-height: 1px; /* for column collapse http://stackoverflow.com/questions/23569705/zurb-foundation-prevent-empty-column-collapsing-to-zero-width */
+}
+
+@media screen and (max-width: 639px){
+    section {
+    padding: 1.5rem 0;
+    }
+}
+
+@media screen and (min-width: 640px){
+    section {
+    padding: 2rem 0;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    section {
+    padding: 4rem 0;
+    }
+}
+
+.page .hentry p:first-of-type:first-line, .single .hentry p:first-of-type:first-line {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.vertical .hentry p, .horizontal .hentry p {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: .75rem;
+    color: #aaa;
+}
+
+.vertical .hentry p:first-of-type, .horizontal .hentry p:first-of-type {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    font-size: .875rem;
+    padding-bottom: 0;
+    color:#c9c9c9;
+    line-height: 1.4;
+}
+
+blockquote {
+    margin: 3rem 0 2rem;
+    padding: .5625rem 1.25rem 0 3.1875rem;
+    font-size: 1rem;
+    border-left: 1px dotted #907B43;
+}
+
+blockquote p {
+    color: #907B43;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+}
+
+b, strong {
+    font-weight: 600;
+}
+
+a {
+    color: #907B43;
+}
+
+.page p a {
+    border-bottom: none;
+    font-weight: 400;
+}
+
+/* -------------------------------------------------------------------------------- */
+/*	2. Top Bar Navigation
+/* -------------------------------------------------------------------------------- */
+
+.title-bar {
+    background-color: #111111;
+    color: #c9c9c9;
+    height: 10rem;
+    padding-top: 30px;
+}
+
+@media screen and (max-width: 639px){
+    .title-bar {
+        height: 6.5rem;
+        padding-top: 1rem;
+    }
+}
+
+.title-bar-title a {
+    font-size: 2.25rem;
+    margin-top: 1.25rem;
+    font-weight: 400;
+    color: #eee;
+    text-transform: lowercase;
+    font-family: 'Montserrat', sans-serif;
+    background-image:url(img/logo-icon3-REVISED-copy.png); /* copy 3 is Mike's choice */
+    background-repeat: no-repeat;
+    line-height: 2.5;
+    vertical-align: middle;
+    margin-left: -.5rem;
+}
+
+.pipe {
+    color: #907B43; /* 144 123 67 */
+    padding-left: 3.5rem;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 639px){
+    .title-bar-title a {
+    color: transparent;
+    line-height: 4.9;
+    vertical-align: middle;
+    font-size: 1rem;
+    margin-top: 1.25rem;
+    padding: 1rem;
+    }
+    .pipe {
+    color: transparent;
+    }
+}
+
+
+
+.title-bar .menu-icon {
+    margin-top: 2.25rem;
+}
+
+@media screen and (max-width: 639px){
+    .title-bar .menu-icon {
+    margin-top: 1.75rem;
+    }
+}
+
+.menu-icon {
+    width: 30px;
+    height: 16px;
+}
+
+.menu-icon::after {
+    background: #efefef;
+    box-shadow: 0 7px 0 #efefef, 0 14px 0 #efefef;
+}
+
+.menu-icon:hover::after {
+    background: #907B43;
+    box-shadow: 0 7px 0 #907B43, 0 14px 0 #907B43; }
+
+.close-button {
+    color: #907B43;
+}
+
+.close-button:hover {
+    color: #c9c9c9;
+}
+
+.off-canvas.position-right {
+    background: #111111;
+    padding: 1.25rem;
+}
+
+.js-off-canvas-exit {
+    background: none;
+}
+
+.off-canvas ul {
+    padding-top: 1rem;
+}
+
+/*  Off-Canvas Menu Styles ---------------------- */
+
+#mobile-menu li {
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: Montserrat, sans-serif;
+    font-size: .9rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #c9c9c9;
+}
+
+#mobile-menu li a {
+    color: #c9c9c9;
+}
+
+ul.sub-menu.dropdown {
+    margin-left: 0;
+    margin-bottom: 1.25rem;
+    line-height: .75rem;
+}
+
+ul.sub-menu.dropdown a {
+    font-size: .875rem;
+    text-transform: lowercase;
+    position: relative;
+    color: #aaa !important;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+}
+
+ul.sub-menu.dropdown a:hover, #mobile-menu li a:hover {
+    color: #907B43 !important;
+}
+
+li#menu-item a {
+    margin-bottom: 1rem;
+}
+
+.current_page_item:before, .current-menu-item:before {
+    color: #907B43;
+    content: "\f101";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: 500;
+    padding-right: 10px;
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+/* Search Form -------------------------- */
+
+.search-form-container input {
+    background: #010101;
+    width: 11rem;
+    margin: auto;
+    border: 1px solid #1d1d1d;
+}
+
+.search-form-container input:focus {
+    background: #1d1d1d;
+    color: #888;
+    outline: none;
+    box-shadow: none;
+}
+
+input.form-control {
+    background-color: #010101;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Search Results Page --------------------- */
+
+.search-results {
+    padding-top: .75rem;
+}
+
+/* -------------------------------------------------------------------------------- */
+/*	3. Front Page Styles
+/* -------------------------------------------------------------------------------- */
+
+
+/* Front Page Masonry Grid Styles ------------------------- */
+
+.grid-header {
+    text-transform: uppercase;
+    border: 2px solid #907B43;
+    padding: .25rem 1rem;
+    display: inline-block;
+    color: #c9c9c9;
+    position: relative; /* keeps the hero overlay off the type */
+    line-height: 2;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    v-display: none;
+}
+
+@media screen and (max-width: 639px){
+    .grid-header {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+    .grid-header {
+        margin-top: 20px;
+    }
+}
+
+.grid-header-blog {
+    color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------------------------------------------------------------------- */
+/*	4. Hero/Category Image Styles
+/* -------------------------------------------------------------------------------- */
+
+
+.page-header-hero, .category-image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    max-height: 100%;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 0;
+    margin: 0;
+}
+
+ .page-header-hero:before, .category-image:before { /* puts an overlay over the image */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(21, 21, 21, 0.2);
+    width: 100%;
+    height: 100%;
+}
+
+.post-image {
+    background-image: url(img/unsplash-alvano-serrano-download-cropped.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    max-height: 100%;
+    width: 100%;
+    padding: 11rem 0 2rem;
+    background-color: #101010;
+}
+
+ .post-image:before { /* puts an overlay over the image */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+}
+
+/* -------------------------------------------------------------------------------- */
+/*	5. Masonry Grid Styles
+/* -------------------------------------------------------------------------------- */
+
+.grid {
+    height: 100%;
+    padding-bottom: 4rem;
+    padding-top: 0;
+}
+
+.grid img {
+    margin: 0;
+    padding: 11px; /* Adjust for smaller screen sizes? */
+}
+
+.gallery {
+    padding-top: 4rem;
+}
+
+.front {
+    margin-top: -5rem;
+    v-display: none;
+}
+
+
+
+.gallery img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+    transition: all .4s ease-out;
+    -webkit-transition: all .4s ease-out;
+    -o-transition: all .4s ease-out;
+    -moz-transition: all .4s ease-out;
+    position: relative;
+}
+
+.gallery img:hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+.gallery img:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(21, 21, 21, 1); /* puts an overlay over the image */
+    width: 100%;
+    height: 100%;
+}
+
+/*  Grid Image Overlay Styles -------------------- */
+
+
+.grid figure {
+    margin: 0;
+    display:inline-block;
+    position: relative;
+    max-width: 500px;
+}
+
+.slide-up figcaption {
+      position: absolute;
+      top: 1.5rem;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      border: 7px solid #907B43;
+      v-background-color: rgba(21,21,21,1);
+      padding: 10% 1%;
+      opacity: 0;
+      -webkit-opacity: 0;
+      transition: opacity .4s ease-out;
+      -webkit-transition: opacity .4s ease-out;
+      -o-transition: opacity .4s ease-out;
+      -moz-transition: opacity .4s ease-out;
+      text-align: center;
+      color: #907B43;
+}
+
+.slide-up figcaption:hover {
+    background-color: rgba(21,21,21,.7);
+    opacity:1;
+
+}
+
+
+
+.related .slide-up figcaption {
+    padding: 0% 1%;
+}
+
+.slide-up figcaption h3, .post-thumb figcaption h3 {
+      font-size: 1.25rem;
+      line-height: 1.2;
+      padding-bottom: .5rem;
+      text-transform: lowercase;
+}
+
+ #masonry-container figure:hover figcaption {
+    opacity: 1;
+}
+
+ figcaption a, figcaption p {
+    color: #fff;
+     margin-top: -12px;
+}
+
+ figcaption a:hover {
+    color: #907B43;
+}
+
+.post-thumb figcaption {
+    padding: .25rem .85rem 2rem;
+}
+
+.post-thumb figcaption p {
+    font-size: .75rem;
+    font-family: Lato, sans-serif;
+    margin-top: 0;
+}
+
+.more {
+    text-transform: lowercase;
+    display: block;
+    margin-top: -10px;
+    font-size: .75rem;
+    font-family: Montserrat, sans-serif;
+}
+
+.more .fa {
+    padding-left: .25rem;
+    vertical-align: middle;
+}
+
+/* Image Post Figcaption Hover Styles -------------------------------  */
+
+
+figure.slide-up h3 {
+    display: inline-block;
+	-webkit-transition: -webkit-transform 0.35s;
+    -moz-transition: -webkit-transform 0.35s;
+    -o-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-moz-transform: translate3d(0,200%,0);
+    -o-transform: translate3d(0,200%,0);
+    -webkit-transform: translate3d(0,200%,0);
+    -ms-transform: translate3d(0,200%,0);
+	transform: translate3d(0,200%,0);
+}
+
+figure.slide-up:hover figcaption,
+figure.slide-up:hover h3 {
+	-webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.slide-up:hover h3 {
+	-webkit-transition-delay: 0.05s;
+    -o-transition-delay: 0.05s;
+    -moz-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+/* -------------------------------------------------------------------------------- */
+/*	6. Blog Styles
+/* -------------------------------------------------------------------------------- */
+
+.post-thumb h3 {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-bottom: 0;
+}
+
+.meta {
+    margin: 0;
+    padding: 0 0 .5rem;
+    font-size: .55rem;
+    text-transform: lowercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.meta li  {
+    display: inline;
+    list-style-type: none;
+    font-size: .5rem;
+}
+
+.single-post .meta a {
+    color: #907B43;
+    border:0;
+}
+
+.single-post .meta a:hover {
+    color: #151515;
+}
+
+.blog figure {
+    margin: 0 0 3rem;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+.blog .post-thumb {
+    margin: 5px 12px 10px;
+}
+
+.blog figcaption a {
+    padding: 0;
+    margin: 0;
+    color: #c9c9c9;
+}
+
+.blog figcaption a:hover {
+    color: #907B43;
+}
+
+.blog .post-excerpt, .blog .more {
+    font-size: .75rem;
+    display: block;
+}
+
+.blog .post-excerpt {
+    margin-bottom: .5rem;
+}
+
+/*  Related Items/Posts Styling ------------------ */
+
+
+.related {
+    background-color: #111111;
+    margin: 3rem auto -1px;
+    width: 100%;
+}
+
+.related img {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.related h3 {
+    font-size: 1.5rem;
+    padding-bottom: 4.5rem;
+    padding-top: 2.5rem; /* see line 853 */
+    text-align: center;
+    color: #c9c9c9;
+    text-transform: uppercase;
+}
+
+.related-post h4 {
+    margin-bottom: .5em;
+    margin-top: -5rem;
+    padding: 0 11px;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #c9c9c9;
+}
+
+/* -------------------------------------------------------------------------------- */
+/*	7. Single Page/Post Styles
+/* -------------------------------------------------------------------------------- */
+
+/* Single Blog Post/Page ---------------------------- */
+
+
+.off-canvas-content .single-post {
+    background: #eee;
+    color: #111111;
+    padding: 0;
+}
+
+/* Portfolio Page h2 styling --------------------- */
+
+.vertical .hentry h2, .horizontal .hentry h2 {
+    font-size: 1.33rem;
+    padding-bottom: .25rem;
+}
+
+@media screen and (min-width: 1024px){
+    .vertical .hentry h2 {
+    font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px){
+    .horizontal .hentry h2 {
+    font-size: 2rem;
+    padding-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .horizontal .hentry h2 {
+    font-size: 1.67rem;
+    }
+}
+
+@media screen and (max-width: 639px){
+     .vertical .hentry h2, .horizontal .hentry h2 {
+     padding: 1rem 0 .5rem;
+     }
+}
+
+h2.archives, h2.single {
+    font-size: .85rem;
+    text-transform: lowercase;
+    color: #907B43;
+    padding: 3rem .5rem 3rem 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+h2.archives a {
+    color: #c9c9c9;
+}
+
+h2 .page-breadcrumb {
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: lowercase;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 639px){
+    h2 .page-breadcrumb {
+    padding-bottom: .5rem;
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    }
+}
+
+@media screen and (min-width: 640px){
+    h2 .page-breadcrumb {
+    padding-right: 0;
+    }
+}
+
+h2.category {
+    padding: 1rem .5rem;
+    font-size: .75rem;
+    text-transform: lowercase;
+}
+
+h2.single a, p.tag a  {
+    color: #907B43;
+}
+
+.single-view .hentry, .single-view h2  {
+    color: #c9c9c9;
+    padding-top: 1rem;
+}
+
+
+/* Portfolio Post Layout Styles --------------------*/
+
+@media screen and (min-width: 1024px){
+   .vertical .hentry {
+    position: absolute;
+    top: 100%;
+    -webkit-transform: translateY(-95%);
+    -ms-transform: translateY(-95%);
+    -o-transform: translateY(-95%);
+    -moz-transform: translateY(-95%);
+    transform: translateY(-95%);
+    }
+}
+
+@media screen and (min-width: 1024px){
+   .horizontal .hentry {
+    position: absolute;
+    top: 100%;
+    -webkit-transform: translateY(-95%);
+    -ms-transform: translateY(-95%);
+    -o-transform: translateY(-95%);
+    -moz-transform: translateY(-95%);
+    transform: translateY(-95%);
+    }
+}
+
+@media screen and (min-width: 640px){
+    .vertical .hentry {
+    margin-left: 3rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .horizontal .hentry {
+    margin-left: 3rem;
+    }
+}
+
+
+/* Blog Post Styles ------------------ */
+
+
+.tag {
+    text-transform: lowercase;
+    font-size: .75rem;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+}
+
+.breadcrumb-separator {
+    color: #c9c9c9;
+}
+
+.page-breadcrumb a {
+    color: #907B43;
+    text-transform: lowercase;
+}
+
+/* Single Post/Page Navigation ------------------ */
+
+
+.portfolio-nav, .blog-nav {
+     width: 100%;
+}
+
+.portfolio-nav a {
+    color: #c9c9c9;
+}
+
+.blog-nav a {
+    color: #333;
+}
+
+.blog-nav {
+    padding: 0;
+}
+
+.portfolio-nav {
+    padding: 1rem;
+    background: #1a1a1a;
+    margin-bottom: -2.5rem; /* compensates for padding added to blog post -- see line 672  */
+}
+
+.portfolio-nav a:hover, .blog-nav a:hover {
+    color: #907B43;
+}
+
+.previous {
+    font-family: FontAwesome;
+    font-size: 1rem;
+    line-height: 50px;
+}
+
+.next {
+    font-family: FontAwesome;
+    font-size: 1rem;
+    line-height: 50px;
+}
+
+hr {
+    max-width: 75rem;
+    height: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #ccc;
+    border-left: 0;
+    margin: 1rem auto;
+    clear: both;
+}
+
+/* ======================== Comment Form Styling [FINISH TESTING!!!!] ==================== */
+
+#reply-title {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem 0 2rem;
+    text-transform: uppercase;
+    color: #444;
+}
+
+.comment-notes #email-notes {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.comment-author.vcard {
+    color: #666;
+}
+
+.comment-meta, .comment-metadata, .reply a {
+    color: #333;
+    text-transform: uppercase;
+    font-size: .75rem;
+    font-weight: 400;
+}
+
+.comment-metadata a {
+    color: #151515;
+    font-family: Lato, sans-serif;
+    text-transform: lowercase;
+    font-size: .75rem;
+    font-style: italic;
+}
+
+.comment-metadata a:hover, .reply a:hover {
+    color: #907B43;
+}
+
+.comment-content p {
+    margin-bottom: 0;
+}
+
+.comments article {
+    padding: 1.25rem 0;
+}
+
+textarea {
+    background: #eee;
+    box-shadow:none;
+    height: 8rem;
+    border: 1px solid #907B43;
+}
+
+[type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], textarea {
+    border: 1px solid #907B43;
+    background-color: #eee;
+    box-shadow: none;
+}
+
+#submit {
+    font-family: Montserrat, sans-serif;
+    color: #eee;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: .5rem .75rem;
+    text-decoration: none;
+    text-align: center;
+    background: #151515;
+    border-width: 0;
+    margin:auto;
+    outline: none;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+}
+
+#submit:hover {
+   color: #907B43;
+}
+
+/* =============== Post/Page Caption Styles https://codex.wordpress.org/CSS ================= */
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto;
+}
+
+.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #eee;
+    border: 0;
+    max-width: 100%; /* Image will not overflow the content area */
+    padding: 0 0 1rem;
+    text-align: center;
+    font-size: .75rem;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    color: #151515;
+}
+
+.wp-caption.alignnone {
+    text-align: left;
+    padding: 0 0 1rem;
+}
+
+.wp-caption.alignleft {
+    text-align: left;
+    padding: 0 0 1rem;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+    text-align: left;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 100%;
+    padding: 0 0 .5rem;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers ----------------- */
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+.gallery-caption {
+    background: #eee;
+    border: 0;
+    max-width: 100%; /* Image does not overflow the content area */
+    padding: .5rem 0 1rem;
+    text-align: left;
+    font-size: .75rem;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+}
+
+.bypostauthor {
+
+}
+
+/* -------------------------------------------------------------------------------- */
+/*	8. Footer Styles
+/* -------------------------------------------------------------------------------- */
+
+footer, .sidebar-widgets {
+    color: #c9c9c9;
+}
+
+.widget-item ul {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-widgets {
+    background-image: url(img/colorful-wide-angle-lenses-cropped-picjumbo-com-compressor.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    max-height: 100%;
+    width: 100%;
+    padding: 5rem 0 2rem;
+    background-color: #101010;
+}
+
+ .sidebar-widgets:before { /* puts an overlay over the image */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.89);
+    width: 100%;
+    height: 100%;
+}
+
+footer a, .page footer a  {
+    color: #c9c9c9;
+    transition: all .4s ease-out;
+    border-bottom: none;
+}
+
+footer a, .sidebar-widgets a  {
+    transition: all .4s ease-out;
+}
+
+footer a:hover, .sidebar-widgets a:hover {
+     color: #907B43;
+}
+
+p .footer-pipe {
+    color: #907B43;
+}
+
+.sidebar-widgets li {
+    border-bottom: 1px dotted #292929;
+    padding: .25rem 0;
+    color: #555;
+    text-transform: lowercase;
+}
+
+.sidebar-widgets a {
+    color: #888;
+    font-size: .85rem !important;
+    font-weight: 400;
+}
+
+.sidebar-widgets li:first-child {
+    border-top: 1px dotted #292929;
+}
+
+.sidebar-widgets .widget-title {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    color: #c9c9c9;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+    .sidebar-widgets .widget-title {
+    font-size: .85rem;
+    }
+}
+
+.widget-item {
+    text-transform: none;
+    padding: 1.25rem 1rem 4rem;
+}
+
+.tagcloud a {
+    border: 1px dotted #292929;
+    text-transform: lowercase;
+    padding: 5px 10px;
+    line-height: 2.5;
+}
+
+.tagcloud a:hover {
+    border: 1px dotted #353535;
+}
+
+.copyright {
+    padding-top: 1rem;
+    v-background-color: #010101;
+    background-color: #111;
+}
+
+.copyright p, .text-link-footer a {
+    font-size: .5rem;
+    text-align: center;
+    text-transform: lowercase;
+    font-family: Montserrat, sans-serif;
+}
+
+.social {
+    margin: 0 0 1rem;
+}
+
+.social li {
+    display: inline;
+    list-style: none;
+    padding: 0 .5rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 639px){
+    .social li {
+    padding: 0 .25rem;
+    font-size: .65rem;
+    }
+}
+
+.up {
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    v-background-color: #010101;
+    background-color: #111;
+}
+
+.front-up {
+     margin-top: -5rem;
+    padding: 0 !important;
+}
+
+@media screen and (max-width: 639px){
+    .up {
+    padding-top: 2rem;
+    }
+}
+
+.top {
+    font-size: 1.75rem;
+    position: relative;
+}
+
+h2.tagline {
+    font-size: .75rem;
+    padding: 0 0 .75rem;
+    text-align: center;
+    padding-top: 0;
+    color: #c9c9c9;
+    text-transform: lowercase;
+}
+
+/* -------------------------------------------------------------------------------- */
+/*	9. 3rd-Party Plugin Overrides
+/* -------------------------------------------------------------------------------- */
+
+/* Metaslider Plugin Style Overrides ---------------------- */
+
+.metaslider .flexslider {
+    margin: 0 0 10px 0 !important;
+}
+
+.flex-control-nav {
+    bottom: -40px !important;
+    z-index: 100 !important;
+}
+
+.flex-control-paging li a.flex-active {
+    background: #907B43 !important;
+    background: rgba(144,123,67,0.9) !important;
+}
+
+.flex-control-paging li a {
+    width: 10px !important;
+    height: 10px !important;
+    display: block;
+    background: transparent !important;
+    background: rgba(0,0,0,0.0) !important;
+    box-shadow: none !important;
+    border: 1px solid #907B43 !important;
+}
+
+.metaslider .caption-wrap {
+    background: #1a1a1a !important;
+    color: #907B43 !important;
+    opacity: 1 !important;
+    text-transform: lowercase !important;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+}
+
+
+
+@media screen and (max-width: 639px){
+    .caption, .flex-control-nav {
+    v-display: none;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px){
+    .caption {
+    padding: .5rem 0 .5rem 0 !important;
+    font-size: .85rem !important;
+     /* wrap */
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+    width: 90%;
+    }
+    .flex-control-nav {
+    bottom: -40px !important;
+    }
+    .flex-control-paging li a {
+    width: 10px !important;
+    height: 10px !important;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .flex-control-nav {
+        v-display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .caption {
+    padding: 1rem 0 1rem 0 !important;
+    font-size: .85rem !important;
+     /* wrap */
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+    width: 90%;
+    }
+}
+
+
+
+/* Contact Form ---------------------- */
+
+.cfsFormShell .cfsContactMsg.cfsSuccessMsg {
+    padding: 5px;
+    margin: 5px 0;
+    text-align: left;
+    color: #907B43 !important;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.cfsFormShell {
+    color: rgba(51, 51, 51, 0.75);
+    opacity: 1;
+    font-weight: 300;
+    font-family: Montserrat, sans-serif;
+    font-size: .7rem;
+    padding-bottom: 1.25rem;
+}
+
+/* Smart Recent Posts plugin ------------------ */
+
+.srpw-block li:first-child {
+    padding-top: .5rem !important;
+}
